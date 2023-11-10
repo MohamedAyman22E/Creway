@@ -38,3 +38,74 @@ window.onscroll = () => {
     }
   });
 };
+window.addEventListener("scroll", () => {
+  function getSpaceBetweenTopElement() {
+    let elements = document.querySelectorAll(".animation_heading");
+    elements.forEach(element => {
+      let rect = element.getBoundingClientRect();
+      let space = rect.y;
+      if (space < 600) {
+        element.style.opacity = "1";
+        element.classList.add("animate__bounceInLeft");
+      }
+    });
+  }
+  getSpaceBetweenTopElement();
+});
+
+// service
+window.addEventListener("scroll", () => {
+  function getSpaceBetweenTopElement() {
+    let elements = document.querySelectorAll(".allBoxService .box");
+    elements.forEach(element => {
+      let rect = element.getBoundingClientRect();
+      let space = rect.y;
+      if (space < 600) {
+        element.style.opacity = "1";
+        element.classList.add("animate__bounce");
+      }
+    });
+  }
+  getSpaceBetweenTopElement();
+});
+//team
+window.addEventListener("scroll", () => {
+  function getSpaceBetweenTopElement() {
+    let elements = document.querySelectorAll(".allBoxTeam .box");
+    elements.forEach(element => {
+      let rect = element.getBoundingClientRect();
+      let space = rect.y;
+      if (space < 600) {
+        element.style.opacity = "1";
+        element.classList.add("animate__bounce");
+      }
+    });
+  }
+  getSpaceBetweenTopElement();
+});
+
+// swiper
+var swiper = new Swiper(".mySwiper", {
+  speed: 400,
+  spaceBetween: 10,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
